@@ -31,7 +31,7 @@ class SearchVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true // hide the
+        navigationController?.setNavigationBarHidden(true, animated: true) // set the nav bar to hidden mode
     }
     // MARK: Action Function
     /// In UIKit, you will be able to choose the way you want to dimiss the button. e.g, tap anywhere on the screen or create an extended button above the
