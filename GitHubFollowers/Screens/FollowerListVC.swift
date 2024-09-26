@@ -57,8 +57,14 @@ class FollowerListVC: UIViewController {
     }
    
     func getFollowers(userName: String, page: Int) {
+        
+        showLoadingView()
+        
         NetworkManager.shared.getFollowers(for: username, page: currentpage) { [weak self] result in
             guard let self = self else { return }
+            
+            self.dismissLoadingView()
+            
             switch result {
             case .success(let followers):
                 if followers.count < 100 { self.hasMoreFollowers = false }
@@ -69,6 +75,8 @@ class FollowerListVC: UIViewController {
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Error", message: error.rawValue, buttonTitle: "Ok")
             }
+            
+           
         }
     }
     func configureDataSource() {
