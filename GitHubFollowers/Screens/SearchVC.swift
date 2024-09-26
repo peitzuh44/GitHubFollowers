@@ -71,14 +71,14 @@ class SearchVC: UIViewController {
     func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "harry-potter")
+        logoImageView.image = UIImage(named: "github-placeholder")
         
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
             // Use safe area layout guide so it starts the padding below the safearea.
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.widthAnchor.constraint(equalToConstant: 200),
-            logoImageView.heightAnchor.constraint(equalToConstant: 280)
+            logoImageView.heightAnchor.constraint(equalToConstant: 200)
         ])
         
     }

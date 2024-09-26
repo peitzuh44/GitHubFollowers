@@ -5,12 +5,14 @@
 //  Created by Pei-Tzu Huang on 2024/9/24.
 //
 
-import Foundation
+import UIKit
 
 class NetworkManager {
     
     static let shared   = NetworkManager()
     let baseUrl         = "https://api.github.com/users/"
+    let cache           = NSCache<NSString, UIImage>()
+    
     // restrict it so there's only one instance of it. Solution -> make the init "private"
     private init() {} // can not initialize outside the class
     
