@@ -67,7 +67,6 @@ class SearchVC: UIViewController {
        3. set the image name
        4. set the constraints
      */
-    
     func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -80,7 +79,6 @@ class SearchVC: UIViewController {
             logoImageView.widthAnchor.constraint(equalToConstant: 200),
             logoImageView.heightAnchor.constraint(equalToConstant: 200)
         ])
-        
     }
     
     func configureTextField() {

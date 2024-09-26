@@ -18,12 +18,16 @@ class FollowerListVC: UIViewController {
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
     var followers: [Follower] = []
+    var currentpage: Int = 1
+    var hasMoreFollowers: Bool = true
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
         configureViewController()
-        getFollowers()
+        getFollowers(userName: username, page: currentpage)
         configureDataSource()
     }
     
@@ -48,14 +52,18 @@ class FollowerListVC: UIViewController {
         
         // 3. register the cell
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
+        
+        collectionView.delegate = self
     }
    
-    func getFollowers() {
-        NetworkManager.shared.getFollowers(for: username, page: 1) { [weak self] result in
+    func getFollowers(userName: String, page: Int) {
+        NetworkManager.shared.getFollowers(for: username, page: currentpage) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let followers):
-                self.followers = followers // here we have a created a strong reference to the class itself
+                if followers.count < 100 { self.hasMoreFollowers = false }
+                self.followers.append(contentsOf: followers) // append a list sequence of followers
+                // here we have a created a strong reference to the class itself
                 self.updateData()
                 print(followers)
             case .failure(let error):
@@ -63,7 +71,6 @@ class FollowerListVC: UIViewController {
             }
         }
     }
-    
     func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { collectionView, indexPath, follower in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
@@ -86,5 +93,24 @@ class FollowerListVC: UIViewController {
             self.dataSource.apply(snapshot, animatingDifferences: true)
         }
         
+    }
+}
+
+
+extension FollowerListVC: UICollectionViewDelegate {
+    // delegate - sitting back and wating for action
+    
+    // When user end dragging, we have to determine whether or not we are at the bottom to decide whether we should load data.
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y // How far we scrolled down.
+        let contentHeight = scrollView.contentSize.height // the total height need to display all the items per network call.
+        let screenHeight = scrollView.frame.size.height // the scrren height
+        
+        if offsetY > contentHeight - screenHeight {
+            guard hasMoreFollowers else { return }
+            currentpage += 1
+            getFollowers(userName: username, page: currentpage)
+        }
+         
     }
 }
