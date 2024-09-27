@@ -10,7 +10,6 @@ import UIKit
 class GFEmptyStateView: UIView {
     
     let messageLabel = GFTitleLabel(textAlignment: .center, fontSize: 28)
-    let logoImageView = UIImageView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,14 +28,12 @@ class GFEmptyStateView: UIView {
     
     private func configure() {
         addSubview(messageLabel)
-        addSubview(logoImageView)
         
         messageLabel.numberOfLines      = 3
         messageLabel.textColor          = .secondaryLabel
         
         
-        logoImageView.image = UIImage(named: "github-placeholder")
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+   
         
         NSLayoutConstraint.activate([
             // Constraint for message label
@@ -44,11 +41,7 @@ class GFEmptyStateView: UIView {
             messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
             messageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
             messageLabel.heightAnchor.constraint(equalToConstant: 200),
-            
-            logoImageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.3),
-            logoImageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1.3),
-            logoImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 200),
-            logoImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 140)
+      
             
             
             
