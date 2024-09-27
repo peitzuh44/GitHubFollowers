@@ -70,6 +70,12 @@ class FollowerListVC: UIViewController {
                 if followers.count < 100 { self.hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers) // append a list sequence of followers
                 // here we have a created a strong reference to the class itself
+                
+                if self.followers.isEmpty {
+                    let message = "This user has no follower."
+                    DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
+                    return
+                }
                 self.updateData()
                 print(followers)
             case .failure(let error):

@@ -10,7 +10,6 @@ import UIKit
 
 // although it's global, when marking as fileprivate, it can only be access within this file.
 fileprivate var containerView: UIView!
-
 extension UIViewController {
     func presentGFAlertOnMainThread(title: String, message: String, buttonTitle: String) {
         DispatchQueue.main.async {
@@ -58,5 +57,12 @@ extension UIViewController {
             containerView.removeFromSuperview()
             containerView = nil
         }
+    }
+    
+    func showEmptyStateView(with message: String, in view: UIView) {
+        let emptyStateView = GFEmptyStateView(message: message)
+        emptyStateView.frame = view.bounds
+        view.addSubview(emptyStateView)
+        
     }
 }
