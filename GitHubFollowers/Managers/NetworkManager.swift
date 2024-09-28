@@ -16,6 +16,7 @@ class NetworkManager {
     // restrict it so there's only one instance of it. Solution -> make the init "private"
     private init() {} // can not initialize outside the class
     
+    // MARK: Get followers
     func getFollowers(for username: String, page: Int, completion: @escaping(Result<[Follower], GFError>) -> Void) {
         // 1. need an url for making network calls
         // In a network manager, typically there's a "base url"
@@ -64,6 +65,52 @@ class NetworkManager {
         }
         
         task.resume() // this is what actually starts the network call
+    }
+    
+    // MARK: Get user info
+    
+    func getUserInfo(username: String, completion: @escaping (Result<User, GFError>) -> Void) {
+        
+        let endpoint = baseUrl + "\(username)"
+        
+        guard let url = URL(string: endpoint) else {
+            completion(.failure(.unableToComplete))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let _ = error {
+                completion(.failure(.invalidUsername))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse,
+                  response.statusCode == 200 else {
+                completion(.failure(.invalidResponse))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.invalidData))
+                return
+            }
+            
+            do {
+                print("enter do")
+                let decoder = JSONDecoder()
+                print("set decoder")
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                print("set strategy")
+                let user = try decoder.decode(User.self, from: data)
+                print("decode sucessfully")
+                completion(.success(user))
+            } catch {
+                completion(.failure(.unableToComplete))
+            }
+        }
+        
+        task.resume()
+        
     }
     
 }

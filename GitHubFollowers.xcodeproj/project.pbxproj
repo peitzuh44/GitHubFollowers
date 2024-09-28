@@ -11,6 +11,7 @@
 		AF427EB22CA2778A00580419 /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF427EB12CA2778A00580419 /* GFAvatarImageView.swift */; };
 		AF427EB52CA2DEDE00580419 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF427EB42CA2DEDE00580419 /* UIHelper.swift */; };
 		AF427EBD2CA6909100580419 /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF427EBC2CA6909100580419 /* GFEmptyStateView.swift */; };
+		AF427EBF2CA6B36D00580419 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF427EBE2CA6B36D00580419 /* UserInfoVC.swift */; };
 		AF6B93F72C9BD0EE00892982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6B93F62C9BD0EE00892982 /* AppDelegate.swift */; };
 		AF6B93F92C9BD0EE00892982 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6B93F82C9BD0EE00892982 /* SceneDelegate.swift */; };
 		AF6B94002C9BD0F000892982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF6B93FF2C9BD0F000892982 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		AF427EB12CA2778A00580419 /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
 		AF427EB42CA2DEDE00580419 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		AF427EBC2CA6909100580419 /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
+		AF427EBE2CA6B36D00580419 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		AF6B93F32C9BD0EE00892982 /* GitHubFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6B93F62C9BD0EE00892982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF6B93F82C9BD0EE00892982 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				AF6B940C2C9C39B000892982 /* FavoriteListVC.swift */,
 				AFAFE2FC2CA1123D00633F8C /* FollowerListVC.swift */,
 				AF6B940A2C9C396F00892982 /* SearchVC.swift */,
+				AF427EBE2CA6B36D00580419 /* UserInfoVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				AFAFE2FD2CA1123D00633F8C /* FollowerListVC.swift in Sources */,
 				AF6B93F72C9BD0EE00892982 /* AppDelegate.swift in Sources */,
 				AF6B93F92C9BD0EE00892982 /* SceneDelegate.swift in Sources */,
+				AF427EBF2CA6B36D00580419 /* UserInfoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
