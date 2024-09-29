@@ -12,6 +12,13 @@
 		AF427EB52CA2DEDE00580419 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF427EB42CA2DEDE00580419 /* UIHelper.swift */; };
 		AF427EBD2CA6909100580419 /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF427EBC2CA6909100580419 /* GFEmptyStateView.swift */; };
 		AF427EBF2CA6B36D00580419 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF427EBE2CA6B36D00580419 /* UserInfoVC.swift */; };
+		AF427EC22CA83D0400580419 /* GFUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF427EC12CA83D0400580419 /* GFUserInfoHeaderVC.swift */; };
+		AF427EC42CA83D4C00580419 /* GFSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF427EC32CA83D4C00580419 /* GFSecondaryTitleLabel.swift */; };
+		AF427EC62CA84F1400580419 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF427EC52CA84F1400580419 /* Constants.swift */; };
+		AF427EC82CA85CE000580419 /* GFItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF427EC72CA85CE000580419 /* GFItemInfoView.swift */; };
+		AF427ECA2CA8EF7300580419 /* GFItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF427EC92CA8EF7300580419 /* GFItemInfoVC.swift */; };
+		AF427ECC2CA8F49100580419 /* GFRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF427ECB2CA8F49100580419 /* GFRepoItemVC.swift */; };
+		AF427ECE2CA8F64300580419 /* GFFollowerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF427ECD2CA8F64300580419 /* GFFollowerItemVC.swift */; };
 		AF6B93F72C9BD0EE00892982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6B93F62C9BD0EE00892982 /* AppDelegate.swift */; };
 		AF6B93F92C9BD0EE00892982 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6B93F82C9BD0EE00892982 /* SceneDelegate.swift */; };
 		AF6B94002C9BD0F000892982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF6B93FF2C9BD0F000892982 /* Assets.xcassets */; };
@@ -37,6 +44,13 @@
 		AF427EB42CA2DEDE00580419 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		AF427EBC2CA6909100580419 /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
 		AF427EBE2CA6B36D00580419 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
+		AF427EC12CA83D0400580419 /* GFUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFUserInfoHeaderVC.swift; sourceTree = "<group>"; };
+		AF427EC32CA83D4C00580419 /* GFSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		AF427EC52CA84F1400580419 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AF427EC72CA85CE000580419 /* GFItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoView.swift; sourceTree = "<group>"; };
+		AF427EC92CA8EF7300580419 /* GFItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoVC.swift; sourceTree = "<group>"; };
+		AF427ECB2CA8F49100580419 /* GFRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRepoItemVC.swift; sourceTree = "<group>"; };
+		AF427ECD2CA8F64300580419 /* GFFollowerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFollowerItemVC.swift; sourceTree = "<group>"; };
 		AF6B93F32C9BD0EE00892982 /* GitHubFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6B93F62C9BD0EE00892982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF6B93F82C9BD0EE00892982 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				AF427EBC2CA6909100580419 /* GFEmptyStateView.swift */,
+				AF427EC72CA85CE000580419 /* GFItemInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,7 +126,9 @@
 		AF427EBA2CA6904500580419 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AF427ECF2CA8F7AE00580419 /* ItemInfoVCs */,
 				AFAFE3032CA1264100633F8C /* GFAlertVC.swift */,
+				AF427EC12CA83D0400580419 /* GFUserInfoHeaderVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -121,8 +138,19 @@
 			children = (
 				AFAFE2FF2CA1233900633F8C /* GFTitleLabel.swift */,
 				AFAFE3012CA1258B00633F8C /* GFBodyLabel.swift */,
+				AF427EC32CA83D4C00580419 /* GFSecondaryTitleLabel.swift */,
 			);
 			path = Labels;
+			sourceTree = "<group>";
+		};
+		AF427ECF2CA8F7AE00580419 /* ItemInfoVCs */ = {
+			isa = PBXGroup;
+			children = (
+				AF427EC92CA8EF7300580419 /* GFItemInfoVC.swift */,
+				AF427ECB2CA8F49100580419 /* GFRepoItemVC.swift */,
+				AF427ECD2CA8F64300580419 /* GFFollowerItemVC.swift */,
+			);
+			path = ItemInfoVCs;
 			sourceTree = "<group>";
 		};
 		AF6B93EA2C9BD0EE00892982 = {
@@ -223,6 +251,7 @@
 			children = (
 				AFAFE3132CA26E9500633F8C /* ErrorMessage.swift */,
 				AF427EB42CA2DEDE00580419 /* UIHelper.swift */,
+				AF427EC52CA84F1400580419 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -303,19 +332,26 @@
 				AF6B94112C9C409900892982 /* GFButton.swift in Sources */,
 				AFAFE3062CA12D6700633F8C /* UIViewController+Ext.swift in Sources */,
 				AF427EB52CA2DEDE00580419 /* UIHelper.swift in Sources */,
+				AF427EC62CA84F1400580419 /* Constants.swift in Sources */,
 				AF427EB22CA2778A00580419 /* GFAvatarImageView.swift in Sources */,
 				AF6B940B2C9C396F00892982 /* SearchVC.swift in Sources */,
 				AFAFE3042CA1264100633F8C /* GFAlertVC.swift in Sources */,
+				AF427EC82CA85CE000580419 /* GFItemInfoView.swift in Sources */,
+				AF427ECE2CA8F64300580419 /* GFFollowerItemVC.swift in Sources */,
 				AF427EB02CA276EF00580419 /* FollowerCell.swift in Sources */,
 				AFAFE3142CA26E9500633F8C /* ErrorMessage.swift in Sources */,
+				AF427EC22CA83D0400580419 /* GFUserInfoHeaderVC.swift in Sources */,
 				AFAFE3022CA1258B00633F8C /* GFBodyLabel.swift in Sources */,
 				AFAFE30C2CA25B0000633F8C /* Follower.swift in Sources */,
 				AFAFE3002CA1233900633F8C /* GFTitleLabel.swift in Sources */,
+				AF427EC42CA83D4C00580419 /* GFSecondaryTitleLabel.swift in Sources */,
+				AF427ECA2CA8EF7300580419 /* GFItemInfoVC.swift in Sources */,
 				AF427EBD2CA6909100580419 /* GFEmptyStateView.swift in Sources */,
 				AFAFE3112CA2626A00633F8C /* NetworkManager.swift in Sources */,
 				AFAFE2FD2CA1123D00633F8C /* FollowerListVC.swift in Sources */,
 				AF6B93F72C9BD0EE00892982 /* AppDelegate.swift in Sources */,
 				AF6B93F92C9BD0EE00892982 /* SceneDelegate.swift in Sources */,
+				AF427ECC2CA8F49100580419 /* GFRepoItemVC.swift in Sources */,
 				AF427EBF2CA6B36D00580419 /* UserInfoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +503,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,6 +535,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
